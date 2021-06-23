@@ -8,7 +8,7 @@ public class TechYuApplication {
 
 	
 	
-	
+	//ㄷㄷㄷ
 	public static void main(String[] args) {
 		SpringApplication.run(TechYuApplication.class, args);
 	}
