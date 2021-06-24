@@ -17,14 +17,14 @@
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
-	<!--  추�? ?�이브러�??�작-->
-		<!-- ?�큐리티 ?�그 ?�이브러�?-->
+	<!--  추가 라이브러리 시작 -->
+		<!-- 시큐리티 라이브러리-->
 <!-- 		<dependency>
 		  <groupId>org.springframework.security</groupId>
 		  <artifactId>spring-security-taglibs</artifactId>
 		</dependency>
 		 -->
-		<!-- JSP ?�플�??�진 -->
+		<!-- JSP  -->
 		<dependency>
 		  <groupId>org.apache.tomcat.embed</groupId>
 		  <artifactId>tomcat-embed-jasper</artifactId>
@@ -37,7 +37,7 @@
 		  <artifactId>jstl</artifactId>
 		</dependency>
 	
-	<!--  추�? ?�이브러�?종료-->
+	<!--  추가라이브러리 종료-->
 	<!-- 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
