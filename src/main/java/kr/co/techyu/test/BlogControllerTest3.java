@@ -14,7 +14,7 @@ public class BlogControllerTest3 implements WebMvcConfigurer{
 
 	@RequestMapping("/")
 	public String main() {
-		return "index";
+		return "index.html";
 	}
 	
 	@Override
