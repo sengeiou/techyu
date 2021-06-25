@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.techyu.test.TestDao">
+     <!-- 멤버리스트 -->
+	 <select id="memberList" parameterType="java.util.HashMap" resultType="kr.co.techyu.test.MemberModel">
+	        /* playnote.com.dao.IMemberdDao.list */
+	        SELECT  @rownum := @rownum+1 AS rnum
+	               ,UUID               AS uuid             
+	               ,EMAIL              AS email            
+	               ,PASSWORD           AS password         
+	               ,USERNAME           AS username         
+	               ,NICKNAME           AS nickname         
+	               ,GRADE              AS grade            
+	               ,PHONE              AS phone            
+	               ,EMAIL_CERT         AS emailCert        
+	               ,REGISTER_DATETIME  AS registerDatetime 
+	               ,LASTLOGIN_DATETIME AS lastloginDatetime
+	               ,LASTLOGIN_IP       AS lastloginIp      
+	               ,IS_ADMIN           AS isAdmin          
+	               ,ADMINMEMO          AS adminmemo        
+	               ,CREATE_DATETIME    AS createDatetime   
+	               ,CREATE_USER        AS createUser       
+	               ,UPDATE_DATETIME    AS updateDatetime   
+	               ,UPDATE_USER        AS updateUser 
+	        FROM    MEMBER
+	               ,(SELECT @rownum := 0) AS R
+	        WHERE 1 = 1
+	        <if test='uuid != null'>
+	          AND UUID = #{uuid}
+	        </if>
+	        <if test='email != null'>
+	          AND EMAIL = #{email}
+	        </if>
+	        <if test='password != null'>
+	          AND PASSWORD = #{password}
+	        </if>
+	          ORDER BY CREATE_DATETIME DESC
+	 </select>
+    
+</mapper>

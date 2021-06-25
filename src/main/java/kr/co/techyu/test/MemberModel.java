@@ -19,6 +19,7 @@ public class MemberModel {
     private String createUser;
     private String updateDatetime;
     private String updateUser;
+    private String rnum;
     
 	public MemberModel(String uuid, String email, String password, String username, String nickname, String grade,
 			String phone, String emailCert, String registerDatetime, String lastloginDatetime, String lastloginIp,
@@ -43,7 +44,15 @@ public class MemberModel {
 		this.updateDatetime = updateDatetime;
 		this.updateUser = updateUser;
 	}
+	public MemberModel() {}
 	
+
+	public String getRnum() {
+		return rnum;
+	}
+	public void setRnum(String rnum) {
+		this.rnum = rnum;
+	}
 	public String getUuid() {
 		return uuid;
 	}
