@@ -31,7 +31,7 @@ public class BlogControllerTest {
 		List<MemberModel> memberList = testSevice.memberList(paramMap);
 		model.addAttribute("memberList", memberList);
 		
-		return "index";
+		return "/WEB-INF/views/index.jsp";
 	}
 	
 }

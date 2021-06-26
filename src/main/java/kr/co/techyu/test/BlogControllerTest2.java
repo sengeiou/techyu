@@ -8,6 +8,6 @@ public class BlogControllerTest2 {
 
 	@RequestMapping("/")
 	public String main() {
-		return "index";
+		return "index.html";
 	}
 }
