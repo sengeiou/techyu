@@ -1,0 +1,28 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      
+spring:
+  datasource:
+    driver-class-name: net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
+    url: jdbc:log4jdbc:mysql://umj7-024.cafe24.com:3306/techyu?autoReconnect=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: techyu
+    password: q1w2e3r4t5
+    
+# pom에 의존성 넣었으므로 자동 설정됨. 
+#  mvc:
+#    view:
+#      prefix: /templates/
+#      suffix: .mustache
+
+  jpa:
+    hibernate:
+      ddl-auto: create #create update none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true

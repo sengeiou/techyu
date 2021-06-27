@@ -12,10 +12,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class BlogControllerTest3 implements WebMvcConfigurer{
 
-	@RequestMapping("/")
-	public String main() {
-		return "index.html";
-	}
+	/*
+	 * @RequestMapping("/") public String main() { return "index.html"; }
+	 */
 	
 	@Override
 	public void addResourceHandlers( final ResourceHandlerRegistry registry) {

@@ -19,9 +19,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import kr.co.techyu.model.KakaoProfile;
 import kr.co.techyu.model.OAuthToken;
 
-@Controller
+@Controller // View를 리턴하겠다.
 public class UserController {
 
+	@GetMapping({"","/"})
+	public String index() {
+		//머스테치 기본폴더가 잡힘 ( src/main/resources/ )
+		//뷰리졸버 설정 : templates (prefix) , mustache ( suffix )
+		return "index";
+	}
 	
 	@GetMapping("/auth/kakao/callback")
 	public @ResponseBody String kakaoCallback(String code) {// Data를 리턴해주는 컨트롤러 함수
