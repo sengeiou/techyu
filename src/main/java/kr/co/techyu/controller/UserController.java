@@ -1,15 +1,21 @@
 package kr.co.techyu.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,9 +24,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import kr.co.techyu.model.KakaoProfile;
 import kr.co.techyu.model.OAuthToken;
+import kr.co.techyu.model.User;
+import kr.co.techyu.service.TechyuService;
+import kr.co.techyu.test.MemberModel;
 
 @Controller // View를 리턴하겠다.
 public class UserController {
+
+
+	@Autowired
+    private TechyuService techyuSevice;
+	
 
 	@GetMapping({"","/"})
 	public String index() {
@@ -116,6 +130,18 @@ public class UserController {
 		//return "카카오 톡큰 요청완료 토큰요청에 대한 응답 : "+ response;
 		//return response.getBody();
 		return response2.getBody();
+	}
+	
+	@GetMapping("/user/memberList")
+	public String memberList(Model model, MemberModel dto, @RequestParam Map<String, Object> param) {
+		
+		HashMap<String, Object> paramMap =  new HashMap<String, Object>();
+		paramMap.put("EMAIL", dto.getEmail());
+
+		List<User> memberList = techyuSevice.memberList(paramMap);
+		model.addAttribute("memberList", memberList);
+		
+		return "/WEB-INF/views/index.jsp";
 	}
 
 }

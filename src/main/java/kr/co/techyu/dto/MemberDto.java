@@ -1,7 +1,5 @@
 package kr.co.techyu.dto;
 
-
-
 public class MemberDto {
     private String uuid              ;
     private String email             ;
