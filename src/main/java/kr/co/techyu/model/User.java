@@ -24,30 +24,30 @@ public class User {
     private String rnum;
     
     
-	public User(String uuid, String email, String password, String username, String nickname, String grade,
-			String phone, String emailCert, String registerDatetime, String lastloginDatetime, String lastloginIp,
-			String isAdmin, String adminmemo, String createDatetime, String createUser, String updateDatetime,
-			String updateUser, String rnum) {
-		super();
-		this.uuid = uuid;
-		this.email = email;
-		this.password = password;
-		this.username = username;
-		this.nickname = nickname;
-		this.grade = grade;
-		this.phone = phone;
-		this.emailCert = emailCert;
-		this.registerDatetime = registerDatetime;
-		this.lastloginDatetime = lastloginDatetime;
-		this.lastloginIp = lastloginIp;
-		this.isAdmin = isAdmin;
-		this.adminmemo = adminmemo;
-		this.createDatetime = createDatetime;
-		this.createUser = createUser;
-		this.updateDatetime = updateDatetime;
-		this.updateUser = updateUser;
-		this.rnum = rnum;
-	}
+//	public User(String uuid, String email, String password, String username, String nickname, String grade,
+//			String phone, String emailCert, String registerDatetime, String lastloginDatetime, String lastloginIp,
+//			String isAdmin, String adminmemo, String createDatetime, String createUser, String updateDatetime,
+//			String updateUser, String rnum) {
+//		super();
+//		this.uuid = uuid;
+//		this.email = email;
+//		this.password = password;
+//		this.username = username;
+//		this.nickname = nickname;
+//		this.grade = grade;
+//		this.phone = phone;
+//		this.emailCert = emailCert;
+//		this.registerDatetime = registerDatetime;
+//		this.lastloginDatetime = lastloginDatetime;
+//		this.lastloginIp = lastloginIp;
+//		this.isAdmin = isAdmin;
+//		this.adminmemo = adminmemo;
+//		this.createDatetime = createDatetime;
+//		this.createUser = createUser;
+//		this.updateDatetime = updateDatetime;
+//		this.updateUser = updateUser;
+//		this.rnum = rnum;
+//	}
 	public String getUuid() {
 		return uuid;
 	}

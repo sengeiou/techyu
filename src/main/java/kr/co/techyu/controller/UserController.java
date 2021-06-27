@@ -124,12 +124,30 @@ public class UserController {
 		System.out.println("techYu 서버에 저장할 패스워드  : "+ garbagePassword);
 		
 		// 회원가입 로직을 추가해야함. 
+		User loginUser = new User();
+		loginUser.setUuid( ""+kakoProfile.getId());
+		loginUser.setEmail(kakoProfile.getKakao_account().getEmail());
+		loginUser.setUsername(kakoProfile.getKakao_account().getEmail()+"_"+kakoProfile.getId());
+		loginUser.setPassword("1234");
+		
+		Map<String,String> map = new HashMap<String,String>();
+		map.put("uuid", ""+kakoProfile.getId());
+		map.put("email", kakoProfile.getKakao_account().getEmail());
+		map.put("username", kakoProfile.getKakao_account().getEmail()+"_"+kakoProfile.getId());
+		map.put("password", "1234");
+		
+		
+		// User  저장.
+		//techyuSevice.updateUser(loginUser);
+		techyuSevice.updateUser(map);
 		
 		
 		// http://json.parser.online.fr/
 		//return "카카오 톡큰 요청완료 토큰요청에 대한 응답 : "+ response;
 		//return response.getBody();
-		return response2.getBody();
+		//return response2.getBody();
+		
+		return kakoProfile.getKakao_account().getProfile().getNickname() + "님.. 로그인되었습니다. ";
 	}
 	
 	@GetMapping("/user/memberList")

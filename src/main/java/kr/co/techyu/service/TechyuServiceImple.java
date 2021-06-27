@@ -2,6 +2,7 @@ package kr.co.techyu.service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,5 +24,11 @@ public class TechyuServiceImple implements TechyuService{
 		 
         return dtoList;
     }
+
+	@Override
+	public int updateUser(Map<String, String> paramMap) {
+
+		return techyuDao.updateUser(paramMap);
+	}
 
 }

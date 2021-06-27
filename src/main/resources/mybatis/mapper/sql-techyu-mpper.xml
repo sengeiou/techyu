@@ -52,91 +52,27 @@
 	      MEMBER (  UUID
 	               ,EMAIL              
 	               ,PASSWORD           
-	               ,USERNAME           
+	               ,USERNAME   
+	               ,REGISTER_DATETIME
+	               ,LASTLOGIN_DATETIME
+	               ,CREATE_USER
+	               ,CREATE_DATETIME        
 	      )
 	   VALUES (     #{uuid}
 	               ,#{email}
 	               ,#{password}
 	               ,#{username}
+	               ,now()
+	               ,now()
+	               ,#{username}
+	               ,now()
 	   )
 	   ON
 	      DUPLICATE KEY
 	   UPDATE
-	               ,EMAIL              = #{email}            
+	               EMAIL              = #{email}            
 	               ,PASSWORD           = #{password}         
 	               ,USERNAME           = #{username}         
-	               ,NICKNAME           = #{nickname}         
-	               ,GRADE              = #{grade}            
-	               ,PHONE              = #{phone}            
-	               ,EMAIL_CERT         = #{emailCert}        
-	               ,REGISTER_DATETIME  = #{registerDatetime} 
-	               ,LASTLOGIN_DATETIME = #{lastloginDatetime}
-	               ,LASTLOGIN_IP       = #{lastloginIp}      
-	               ,IS_ADMIN           = #{isAdmin}          
-	               ,ADMINMEMO          = #{adminmemo}        
-	               ,UPDATE_USER        = now()   
-	               ,UPDATE_DATETIME    = #{updateDatetime}   
-		WHERE 	UUID = #{uuid}             
+	               ,UPDATE_DATETIME    = now()   
 	</insert>  
-    
-     <!-- 사용자 추가 
-     -->
-	<insert id="updateUser" parameterType="map">
-	   INSERT INTO
-	      MEMBER (  UUID
-	               ,EMAIL              
-	               ,PASSWORD           
-	               ,USERNAME           
-	               ,NICKNAME           
-	               ,GRADE              
-	               ,PHONE              
-	               ,EMAIL_CERT         
-	               ,REGISTER_DATETIME  
-	               ,LASTLOGIN_DATETIME 
-	               ,LASTLOGIN_IP       
-	               ,IS_ADMIN           
-	               ,ADMINMEMO          
-	               ,CREATE_USER        
-	               ,CREATE_DATETIME    
-	               ,UPDATE_USER        
-	               ,UPDATE_DATETIME    
-	      )
-	   VALUES (     #{uuid}
-	               ,#{email}
-	               ,#{password}
-	               ,#{username}
-	               ,#{nickname}
-	               ,#{grade}
-	               ,#{phone}
-	               ,#{emailCert}
-	               ,#{registerDatetime}
-	               ,#{lastloginDatetime}
-	               ,#{lastloginIp}
-	               ,#{isAdmin}
-	               ,#{adminmemo}
-	               ,#{createUser}
-	               ,now()
-	               ,#{updateUser}
-	               ,now()
-	   )
-	   ON
-	      DUPLICATE KEY
-	   UPDATE
-	               ,EMAIL              = #{email}            
-	               ,PASSWORD           = #{password}         
-	               ,USERNAME           = #{username}         
-	               ,NICKNAME           = #{nickname}         
-	               ,GRADE              = #{grade}            
-	               ,PHONE              = #{phone}            
-	               ,EMAIL_CERT         = #{emailCert}        
-	               ,REGISTER_DATETIME  = #{registerDatetime} 
-	               ,LASTLOGIN_DATETIME = #{lastloginDatetime}
-	               ,LASTLOGIN_IP       = #{lastloginIp}      
-	               ,IS_ADMIN           = #{isAdmin}          
-	               ,ADMINMEMO          = #{adminmemo}        
-	               ,UPDATE_USER        = now()   
-	               ,UPDATE_DATETIME    = #{updateDatetime}   
-		WHERE 	UUID = #{uuid}             
-	</insert>    
-    
 </mapper>
