@@ -128,7 +128,7 @@
                 <artifactId>frontend-maven-plugin</artifactId>
                 <version>1.10.3</version>
                 <configuration>
-                <workingDirectory>D:/Develop/react-app</workingDirectory>
+                <workingDirectory>D:/workspace/techYuReact/techyu</workingDirectory>
                 <installDirectory>target</installDirectory>
                 </configuration>
                 <executions>

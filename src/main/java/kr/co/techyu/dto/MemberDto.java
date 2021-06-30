@@ -6,7 +6,6 @@ public class MemberDto {
     private String password          ;
     private String username          ;
     private String nickname          ;
-    private String grade             ;
     private String phone             ;
     private String emailCert         ;
     private String registerDatetime  ;
@@ -62,12 +61,6 @@ public class MemberDto {
 	}
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
-	}
-	public String getGrade() {
-		return grade;
-	}
-	public void setGrade(String grade) {
-		this.grade = grade;
 	}
 	public String getPhone() {
 		return phone;
