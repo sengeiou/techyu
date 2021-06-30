@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import kr.co.techyu.model.User;
+
 @Controller
 public class BlogControllerTest {
 
@@ -31,6 +33,13 @@ public class BlogControllerTest {
 		model.addAttribute("memberList", memberList);
 		
 		return "/WEB-INF/views/index.jsp";
+	}
+
+	@GetMapping("/test/memberList1")
+	public String memberList1(Model model, MemberModel dto, @RequestParam Map<String, Object> param) {
+		
+		//return "/WEB-INF/views/static/index";
+		return "index";
 	}
 	
 }

@@ -162,4 +162,5 @@ public class UserController {
 		return "/WEB-INF/views/index.jsp";
 	}
 
+
 }

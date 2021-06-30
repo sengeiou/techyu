@@ -18,7 +18,6 @@
 	               ,PASSWORD           AS password         
 	               ,USERNAME           AS username         
 	               ,NICKNAME           AS nickname         
-	               ,GRADE              AS grade            
 	               ,PHONE              AS phone            
 	               ,EMAIL_CERT         AS emailCert        
 	               ,REGISTER_DATETIME  AS registerDatetime 

@@ -172,7 +172,7 @@
                              <goal>copy-resources</goal>
                          </goals>
                          <configuration>
-                             <outputDirectory>${basedir}/target/classes/static</outputDirectory>
+                             <outputDirectory>${basedir}/src/main/resources/templates</outputDirectory>
                              <resources>
                                  <resource>
                                      <directory>D:/workspace/techYuReact/techyu/build</directory>
