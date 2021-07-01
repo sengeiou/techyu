@@ -23,7 +23,7 @@ public class BoardSeviceImple implements BoardSevice{
 		
 		 String sqlId = ".listDao";
 		 String sql = sqlSession.getConfiguration().getMappedStatement(namespace+sqlId).getBoundSql(paramMap).getSql();
-		 System.out.println("==== list ====");
+		 System.out.println("==== ㄴㄴlist ====");
 	     System.out.println(sql);
 	        
 		 List<Board> dto = sqlSession.selectList(namespace+sqlId, paramMap);
