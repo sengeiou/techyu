@@ -19,6 +19,12 @@ public class MemberDto {
     private String updateUser        ;
     private String loginChk        ;
     private String emailChk        ;
+    private String title			;
+    private String contents			;
+    private String boardCode		;
+    private String userId			;
+    private String hits				;
+
     
 	public String getLoginChk() {
 		return loginChk;
@@ -128,4 +134,35 @@ public class MemberDto {
 	public void setUpdateUser(String updateUser) {
 		this.updateUser = updateUser;
 	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getContents() {
+		return contents;
+	}
+	public void setContents(String contents) {
+		this.contents = contents;
+	}
+	public String getBoardCode() {
+		return boardCode;
+	}
+	public void setBoardCode(String boardCode) {
+		this.boardCode = boardCode;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public String getHits() {
+		return hits;
+	}
+	public void setHits(String hits) {
+		this.hits = hits;
+	}
+	
 }

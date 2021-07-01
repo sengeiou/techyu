@@ -73,5 +73,42 @@
 	               ,PASSWORD           = #{password}         
 	               ,USERNAME           = #{username}         
 	               ,UPDATE_DATETIME    = now()   
+	</insert> 
+	
+	    <!-- 게시판 입력
+     -->
+	<insert id="updateNoticeBoard" parameterType="map">
+	   INSERT INTO
+	      BOARD (  
+	      			`UUID`,
+					`BOARD_CODE`,
+					`TITLE`,
+					`USER_ID`,
+					`CONTENTS`,
+					`HITS`,
+					`CREATE_DATETIME`,
+					`CREATE_USER`,
+					`UPDATE_DATETIME`,
+					`UPDATE_USER`       
+	      )
+	   VALUES (     
+					#{uuid},
+					#{boardCode},
+					#{title},
+					#{userId},
+					#{contents},
+					#{hits},
+					now(),
+					#{createUser},
+					now(),
+					#{updateUser}
+	   )
+	   ON
+	      DUPLICATE KEY
+	   UPDATE
+	               TITLE	          	= #{title}            
+	               ,CONTENTS          	= #{contents}         
+	               ,UPDATE_USER       	= #{updateUser}         
+	               ,UPDATE_DATETIME   	= now()   
 	</insert>  
 </mapper>

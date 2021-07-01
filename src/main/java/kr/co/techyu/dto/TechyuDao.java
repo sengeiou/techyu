@@ -12,6 +12,7 @@ import kr.co.techyu.model.User;
 public interface TechyuDao {
 	public int memberSave(User dto);
 	public List<User> memberList(HashMap<String, Object> paramMap);
-	//public int updateUser(User dto);
+
 	public int updateUser(Map<String,String> dto);
+	public int updateNoticeBoard(MemberDto vo);
 }

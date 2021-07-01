@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
@@ -22,6 +23,7 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import kr.co.techyu.dto.MemberDto;
 import kr.co.techyu.model.KakaoProfile;
 import kr.co.techyu.model.OAuthToken;
 import kr.co.techyu.model.User;
@@ -41,6 +43,25 @@ public class UserController {
 		//머스테치 기본폴더가 잡힘 ( src/main/resources/ )
 		//뷰리졸버 설정 : templates (prefix) , mustache ( suffix )
 		return "indexWeb";
+	}
+
+	@PostMapping({"","/noticeBoard/save"})
+	@ResponseBody
+	public Map<String,Object> save( MemberDto vo) {
+
+		System.out.println("XXX");
+		UUID uuid = UUID.randomUUID();
+		
+		vo.setUuid(uuid.toString());
+		vo.setBoardCode("WEB NB");
+		vo.setUserId("techyu");
+		vo.setHits("100");
+		vo.setCreateUser("techyu");
+		vo.setUpdateUser("tech Yu");
+		
+		techyuSevice.updateNoticeBoard(vo);
+		
+		return new HashMap<String,Object>();
 	}
 	
 	@GetMapping("/auth/kakao/callback")
