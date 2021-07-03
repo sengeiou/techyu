@@ -5,11 +5,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
@@ -31,18 +34,35 @@ import kr.co.techyu.web.model.User;
 import kr.co.techyu.web.service.TechyuService;
 
 @Controller // View를 리턴하겠다.
+@EnableRedisHttpSession 
 public class UserController {
 
 
 	@Autowired
     private TechyuService techyuSevice;
-	
+
 
 	@GetMapping({"","/"})
 	public String index() {
 		//머스테치 기본폴더가 잡힘 ( src/main/resources/ )
 		//뷰리졸버 설정 : templates (prefix) , mustache ( suffix )
 		return "indexWeb";
+	}
+
+	@PostMapping({"","/doSetSession"})
+	@ResponseBody
+	public String doSetSession(HttpSession session) {
+
+		session.setAttribute("name", "TECH YU !! YOU !!");
+		
+		return session.getId()+"\nHELLO "+session.getAttribute("name");
+	}
+
+	@PostMapping({"","/doGetSession"})
+	@ResponseBody
+	public int doGetSession(HttpSession session) {
+
+		return (int)session.getAttribute("name");
 	}
 
 	@PostMapping({"","/noticeBoard/save"})

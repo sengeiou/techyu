@@ -12,30 +12,30 @@ server:
     include-binding-errors: always      
       
 spring:
-  profiles:
-   active: local #기본적으로 local이 선택된다는 뜻
-#  redis:#    host: localhost
-#    port: 6379
-#  session:
-#    timeout: 600
-#    store-type: redis
-#  redis:#    flush-mode: on-save
-#    namespace: spring-session       
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: teawon7kr@gmail.com
-    password: xx
-    properties:        mail:
-          smtp:
-            auth: true
-            starttls:
-              enable:true
-  servlet:
-    multipart:      file-size-threshold: 1MB
-      location : D:\FILE_UPLOAD
-      max-file-size: 100MB
-      max-request-size: 100MB
+#  profiles:
+#   active: local #기본적으로 local이 선택된다는 뜻
+  redis:    host: localhost
+    port: 6379
+  session:
+    timeout: 600
+    store-type: redis
+    redis:      flush-mode: on-save
+      namespace: spring-session       
+#  mail:
+#    host: smtp.gmail.com
+#   port: 587
+#    username: teawon7kr@gmail.com
+#    password: xx
+#    properties:#       mail:
+#          smtp:
+#            auth: true
+#           starttls:
+#              enable:true
+#  servlet:
+#    multipart:#      file-size-threshold: 1MB
+#      location : D:\FILE_UPLOAD
+#      max-file-size: 100MB
+#      max-request-size: 100MB
   mvc:    view:      prefix: /WEB-INF/jsp/
       suffix: .jsp        datasource:
     driver-class-name: net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
