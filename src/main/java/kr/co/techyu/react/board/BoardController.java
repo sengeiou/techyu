@@ -18,17 +18,17 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @Slf4j // 이걸 해야 log.info(..) 가 가능, 디버깅 용도
 public class BoardController {
-	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
-    @Autowired
-    private BoardSevice boardService;
-
-	@GetMapping("/react/board/getBoardList")
-	public List<Board> getBoardList() {
-		
-		List<Board> boardList = boardService.list(null);
-		
-		//return "hello spring boot";
-		return boardList;
-	}
+//	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+//    @Autowired
+//    private BoardSevice boardService;
+//
+//	@GetMapping("/react/board/getBoardList")
+//	public List<Board> getBoardList() {
+//		
+//		List<Board> boardList = boardService.list(null);
+//		
+//		//return "hello spring boot";
+//		return boardList;
+//	}
 
 }
